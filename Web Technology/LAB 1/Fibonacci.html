@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+
+<body>
+    <script>
+        let num = Number(prompt("Enter a end point"));
+        let num1 = 0;
+        let num2 = 1;
+        document.write(num1 +",");
+        document.write(num2 +",");
+        let sum;
+            for (let i = 3; i <= num; i++) {
+                sum = num1 + num2;
+                document.write(sum +",");
+                num1 = num2;
+                num2 = sum;
+                    
+            }
+            
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        let n1 = Number(prompt("Enter a number: "))
+        let n2 = Number(prompt("Enter a number: "))
+        let o = (prompt("Enter a Operation: "))
+        let ans =  0;
+
+        if(o=="+"){
+            document.writeln("Operation + is chose"+"<br/>");
+            ans = n1+n2;
+            document.writeln("Answer is "+ans)
+        }
+        else if(o=="-"){
+            document.writeln("Operation - is chose"+"<br/>");
+            ans = n1-n2;
+            document.writeln("Answer is "+ans)
+        }
+        else if(o=="*"){
+            document.writeln("Operation * is chose"+"<br/>");
+            ans = n1*n2;
+            document.writeln("Answer is "+ans)
+        }
+         else if(o=="/"){
+            if(n2==0){
+                alert("Can't divided by zero")
+            }
+            else{
+            document.writeln("Operation / is chose"+"<br/>");
+            ans = n1/n2;
+            document.writeln("Answer is "+ans)
+            }
+        }
+    </script>
+</body>
+</html>
