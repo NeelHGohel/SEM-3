@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCDOfANumber</title>
+</head>
+<body>
+    <script>
+        let n1 = Number(prompt("Enter a Start Number: "));
+        let n2 = Number(prompt("Enter a End Number: "));
+        let ans=0;
+        if(n1>n2){
+            for(i=1;i<=n2;i++){
+                if(n1%i==0 && n2%i==0){
+                    ans=i;
+                }
+            }
+            document.write(ans);
+        }
+        else{
+            for(i=1;i<=n1;i++){
+                if(n1%i==0 && n2%i==0){
+                    ans=i;
+                }
+            }
+            document.write(ans);
+        }
+    </script>
+</body>
+</html>

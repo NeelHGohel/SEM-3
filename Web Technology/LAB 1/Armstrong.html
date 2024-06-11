@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ARMSTRONG NUMBER</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let n = Number(prompt("Enter three digit positive Number : "));
+		let rem,sum;
+		let temp = n;
+		while(temp>0){
+			rem = temp%10;
+			sum = sum + (rem*rem*rem);
+			temp = parseInt(temp/10);
+		}
+		if(sum==n){
+			alert("Armstrong number");
+		}
+		else{
+			alert("Not Armstrong Number :");
+		}
+	</script>
+</body>
+</html>
