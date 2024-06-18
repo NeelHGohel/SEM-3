@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Maximum Number From Array</title>
+</head>
+<body>
+    <script>
+        // // Using for loop
+        // let a = [1,2,3,4,5];
+        // let max = a[0];
+
+        // for(i=0;i<a.length;i++){
+        //     if(max<a[i]){
+        //         max = a[i];
+        //     }
+        // }
+        // document.write(max)
+
+        // //using for-of loop
+
+        let a = [1,2,50,3,4,5];
+        let max = a[0];
+
+        for (let i of a) {
+            if(max<a[i]){
+                max = a[i];
+            }
+        }
+        document.write(max)
+        
+    </script>
+</body>
+</html>
