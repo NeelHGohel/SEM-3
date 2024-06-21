@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty</title>
+</head>
+<body>
+    <script>
+        Faculty =[
+  {
+    "createdAt": "2024-06-19T09:47:19.176Z",
+    "name": "Daryl West",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/716.jpg",
+    "City": "Chula Vista",
+    "MobileNumber": "984-757-2610 x25689",
+    "id": "1"
+  },
+  {
+    "createdAt": "2024-06-18T15:08:37.305Z",
+    "name": "Mable Frami",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/900.jpg",
+    "City": "Jacksonville",
+    "MobileNumber": "(942) 820-2416 x39509",
+    "id": "2"
+  },
+  {
+    "createdAt": "2024-06-19T12:02:56.288Z",
+    "name": "Juan McLaughlin",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1114.jpg",
+    "City": "Jefferson City",
+    "MobileNumber": "663-546-9917 x460",
+    "id": "3"
+  },
+  {
+    "createdAt": "2024-06-19T09:31:50.468Z",
+    "name": "Beulah Torphy DVM",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/515.jpg",
+    "City": "Elmhurst",
+    "MobileNumber": "732-426-3274 x0265",
+    "id": "4"
+  },
+  {
+    "createdAt": "2024-06-18T20:43:34.200Z",
+    "name": "Ken Goodwin",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1108.jpg",
+    "City": "Fond du Lac",
+    "MobileNumber": "331-799-0123 x136",
+    "id": "5"
+  },
+  {
+    "createdAt": "2024-06-19T11:46:34.392Z",
+    "name": "Sheldon Bahringer",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/735.jpg",
+    "City": "Santa Fe",
+    "MobileNumber": "956.599.9958 x059",
+    "id": "6"
+  },
+  {
+    "createdAt": "2024-06-19T01:59:02.878Z",
+    "name": "Carl Kris",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/805.jpg",
+    "City": "Moline",
+    "MobileNumber": "779-884-4417",
+    "id": "7"
+  },
+  {
+    "createdAt": "2024-06-19T11:45:54.349Z",
+    "name": "Mrs. Max Spinka",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/733.jpg",
+    "City": "Harlingen",
+    "MobileNumber": "763.498.1424 x990",
+    "id": "8"
+  },
+  {
+    "createdAt": "2024-06-18T22:07:54.591Z",
+    "name": "Frances Tillman",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/345.jpg",
+    "City": "Hialeah",
+    "MobileNumber": "715.827.5680 x795",
+    "id": "9"
+  },
+  {
+    "createdAt": "2024-06-19T02:32:07.121Z",
+    "name": "Elaine Klocko",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/773.jpg",
+    "City": "Longview",
+    "MobileNumber": "216-427-0227 x73388",
+    "id": "10"
+  },
+  {
+    "createdAt": "2024-06-19T09:50:55.543Z",
+    "name": "Pauline Rogahn",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/806.jpg",
+    "City": "Tulsa",
+    "MobileNumber": "318-958-2983",
+    "id": "11"
+  },
+  {
+    "createdAt": "2024-06-18T22:41:00.743Z",
+    "name": "Mr. Morris Gulgowski",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/165.jpg",
+    "City": "Rosemead",
+    "MobileNumber": "1-620-717-4183 x1517",
+    "id": "12"
+  },
+  {
+    "createdAt": "2024-06-18T19:43:38.926Z",
+    "name": "Joey VonRueden",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/937.jpg",
+    "City": "Lawrence",
+    "MobileNumber": "(808) 936-1520 x988",
+    "id": "13"
+  },
+  {
+    "createdAt": "2024-06-18T19:01:25.257Z",
+    "name": "Cindy Osinski",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/832.jpg",
+    "City": "San Ramon",
+    "MobileNumber": "293-578-7130 x5503",
+    "id": "14"
+  },
+  {
+    "createdAt": "2024-06-19T10:41:50.580Z",
+    "name": "Mr. Ann Rogahn",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/393.jpg",
+    "City": "Escondido",
+    "MobileNumber": "819.491.8937 x91893",
+    "id": "15"
+  },
+  {
+    "createdAt": "2024-06-18T20:35:08.424Z",
+    "name": "Dan Halvorson",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/334.jpg",
+    "City": "Flagstaff",
+    "MobileNumber": "1-880-204-0455 x6485",
+    "id": "16"
+  },
+  {
+    "createdAt": "2024-06-19T02:44:01.234Z",
+    "name": "Christy Oberbrunner",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1154.jpg",
+    "City": "Redondo Beach",
+    "MobileNumber": "589-956-6765 x27711",
+    "id": "17"
+  },
+  {
+    "createdAt": "2024-06-18T19:40:43.902Z",
+    "name": "Kari Jakubowski",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1087.jpg",
+    "City": "Winston-Salem",
+    "MobileNumber": "(543) 417-7898 x931",
+    "id": "18"
+  },
+  {
+    "createdAt": "2024-06-18T20:50:39.486Z",
+    "name": "Josephine Mante MD",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1090.jpg",
+    "City": "Roanoke",
+    "MobileNumber": "1-660-559-7392 x980",
+    "id": "19"
+  },
+  {
+    "createdAt": "2024-06-18T23:58:04.842Z",
+    "name": "Carlton Parisian",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/339.jpg",
+    "City": "Springdale",
+    "MobileNumber": "(395) 989-5207 x422",
+    "id": "20"
+  },
+  {
+    "createdAt": "2024-06-20T20:46:14.258Z",
+    "name": "Ramon Funk",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/993.jpg",
+    "City": "Bowling Green",
+    "MobileNumber": "297-740-3418 x539",
+    "id": "21"
+  },
+  {
+    "createdAt": "2024-06-21T00:30:10.804Z",
+    "name": "Toni Bechtelar",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/790.jpg",
+    "City": "Franklin",
+    "MobileNumber": "(900) 852-9825 x651",
+    "id": "22"
+  },
+  {
+    "createdAt": "2024-06-20T18:03:59.578Z",
+    "name": "Franklin Kuhlman",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/435.jpg",
+    "City": "Albuquerque",
+    "MobileNumber": "569-543-5537",
+    "id": "23"
+  },
+  {
+    "createdAt": "2024-06-20T19:48:59.402Z",
+    "name": "Beth Franecki",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/255.jpg",
+    "City": "Troy",
+    "MobileNumber": "424.769.7172 x5186",
+    "id": "24"
+  },
+  {
+    "createdAt": "2024-06-20T14:27:25.798Z",
+    "name": "Delia Gottlieb I",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/744.jpg",
+    "City": "Logan",
+    "MobileNumber": "1-637-770-5599",
+    "id": "25"
+  },
+  {
+    "createdAt": "2024-06-20T18:01:06.463Z",
+    "name": "Terrence Weimann",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/395.jpg",
+    "City": "Indianapolis",
+    "MobileNumber": "611-415-1515 x397",
+    "id": "26"
+  },
+  {
+    "createdAt": "2024-06-20T17:19:39.361Z",
+    "name": "Ms. Jacob Satterfield",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1015.jpg",
+    "City": "Casas Adobes",
+    "MobileNumber": "429.205.4173 x046",
+    "id": "27"
+  },
+  {
+    "createdAt": "2024-06-20T13:17:09.353Z",
+    "name": "Mrs. Geoffrey Mante",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/781.jpg",
+    "City": "Washington",
+    "MobileNumber": "(834) 889-3873 x495",
+    "id": "28"
+  },
+  {
+    "createdAt": "2024-06-20T15:09:07.908Z",
+    "name": "Lee Emard",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/52.jpg",
+    "City": "Fort Collins",
+    "MobileNumber": "983.327.8840",
+    "id": "29"
+  },
+  {
+    "createdAt": "2024-06-21T04:02:38.577Z",
+    "name": "Ms. Evelyn Purdy",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/256.jpg",
+    "City": "Hesperia",
+    "MobileNumber": "(288) 586-8267 x4468",
+    "id": "30"
+  },
+  {
+    "createdAt": "2024-06-21T01:04:34.113Z",
+    "name": "Josefina Predovic",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1248.jpg",
+    "City": "Texas City",
+    "MobileNumber": "(718) 575-1054",
+    "id": "31"
+  },
+  {
+    "createdAt": "2024-06-20T23:30:31.743Z",
+    "name": "Ronald Greenfelder",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/453.jpg",
+    "City": "Killeen",
+    "MobileNumber": "1-863-200-4940 x12093",
+    "id": "32"
+  },
+  {
+    "createdAt": "2024-06-21T06:59:29.834Z",
+    "name": "Emanuel Schultz",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1098.jpg",
+    "City": "San Rafael",
+    "MobileNumber": "(222) 560-8957 x086",
+    "id": "33"
+  },
+  {
+    "createdAt": "2024-06-21T02:52:34.028Z",
+    "name": "Rex Kuhic",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/490.jpg",
+    "City": "El Paso",
+    "MobileNumber": "457-447-1125",
+    "id": "34"
+  },
+  {
+    "createdAt": "2024-06-20T13:16:23.103Z",
+    "name": "Penny Stamm",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1183.jpg",
+    "City": "Palo Alto",
+    "MobileNumber": "(571) 597-9679 x609",
+    "id": "35"
+  },
+  {
+    "createdAt": "2024-06-21T10:04:20.708Z",
+    "name": "Mr. Casey Keeling",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/392.jpg",
+    "City": "Indio",
+    "MobileNumber": "301.748.4466",
+    "id": "36"
+  },
+  {
+    "createdAt": "2024-06-21T06:13:21.449Z",
+    "name": "Cristina Smitham DVM",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/824.jpg",
+    "City": "Lawton",
+    "MobileNumber": "1-823-639-4338 x46210",
+    "id": "37"
+  },
+  {
+    "createdAt": "2024-06-21T06:23:27.072Z",
+    "name": "Wendy Daniel Jr.",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/682.jpg",
+    "City": "San Francisco",
+    "MobileNumber": "1-671-213-5376 x593",
+    "id": "38"
+  },
+  {
+    "createdAt": "2024-06-21T01:07:27.340Z",
+    "name": "Clark McDermott",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/109.jpg",
+    "City": "Tuckahoe",
+    "MobileNumber": "487.493.8751 x1088",
+    "id": "39"
+  },
+  {
+    "createdAt": "2024-06-20T13:56:39.166Z",
+    "name": "Johnny Hegmann",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/348.jpg",
+    "City": "San Clemente",
+    "MobileNumber": "1-632-700-0429",
+    "id": "40"
+  },
+  {
+    "createdAt": "2024-06-21T11:20:10.322Z",
+    "name": "Jan Kuhic",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/889.jpg",
+    "City": "Valdosta",
+    "MobileNumber": "508-417-7904 x43777",
+    "id": "41"
+  },
+  {
+    "createdAt": "2024-06-20T18:36:07.353Z",
+    "name": "Nicole Goyette",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/96.jpg",
+    "City": "Portage",
+    "MobileNumber": "(550) 660-8538 x199",
+    "id": "42"
+  },
+  {
+    "createdAt": "2024-06-21T09:23:30.695Z",
+    "name": "Helen Hahn",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1153.jpg",
+    "City": "Fort Smith",
+    "MobileNumber": "811-608-3745 x40130",
+    "id": "43"
+  },
+  {
+    "createdAt": "2024-06-21T01:20:57.670Z",
+    "name": "Kimberly Gerlach",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/323.jpg",
+    "City": "Hoover",
+    "MobileNumber": "(977) 325-5439 x86818",
+    "id": "44"
+  },
+  {
+    "createdAt": "2024-06-20T17:49:45.472Z",
+    "name": "Alejandro Fritsch",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/881.jpg",
+    "City": "Dothan",
+    "MobileNumber": "1-864-818-4323 x2526",
+    "id": "45"
+  },
+  {
+    "createdAt": "2024-06-21T01:50:55.706Z",
+    "name": "Emanuel Jacobi III",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1127.jpg",
+    "City": "Conroe",
+    "MobileNumber": "(641) 510-4793 x21979",
+    "id": "46"
+  },
+  {
+    "createdAt": "2024-06-21T03:28:14.826Z",
+    "name": "Antonia Kovacek",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/754.jpg",
+    "City": "Chico",
+    "MobileNumber": "(543) 937-9081 x71249",
+    "id": "47"
+  },
+  {
+    "createdAt": "2024-06-21T02:10:28.272Z",
+    "name": "Mr. Abel Nolan",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1019.jpg",
+    "City": "Bristol",
+    "MobileNumber": "486-973-2847",
+    "id": "48"
+  },
+  {
+    "createdAt": "2024-06-20T13:43:25.263Z",
+    "name": "Kathy Olson DVM",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/442.jpg",
+    "City": "Athens-Clarke County",
+    "MobileNumber": "(281) 265-2870 x7675",
+    "id": "49"
+  },
+  {
+    "createdAt": "2024-06-21T10:09:52.708Z",
+    "name": "Alexander Legros",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/325.jpg",
+    "City": "McKinney",
+    "MobileNumber": "(671) 524-3053 x026",
+    "id": "50"
+  },
+  {
+    "createdAt": "2024-06-20T17:48:04.422Z",
+    "name": "Dan Hand",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/133.jpg",
+    "City": "Vineland",
+    "MobileNumber": "1-997-846-9659",
+    "id": "51"
+  },
+  {
+    "createdAt": "2024-06-21T06:55:08.186Z",
+    "name": "Erin Lueilwitz",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1091.jpg",
+    "City": "Novato",
+    "MobileNumber": "360.521.4356 x520",
+    "id": "52"
+  },
+  {
+    "createdAt": "2024-06-21T01:48:26.965Z",
+    "name": "Dominick Hauck",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/798.jpg",
+    "City": "Vineland",
+    "MobileNumber": "666.850.3340 x41011",
+    "id": "53"
+  },
+  {
+    "createdAt": "2024-06-21T08:40:14.946Z",
+    "name": "Constance Jacobson",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1150.jpg",
+    "City": "Boca Raton",
+    "MobileNumber": "(211) 911-9181 x52863",
+    "id": "54"
+  },
+  {
+    "createdAt": "2024-06-21T08:19:49.480Z",
+    "name": "Chelsea McDermott",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/889.jpg",
+    "City": "Annandale",
+    "MobileNumber": "675.840.5747",
+    "id": "55"
+  },
+  {
+    "createdAt": "2024-06-21T05:30:29.394Z",
+    "name": "Nellie Weissnat I",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1116.jpg",
+    "City": "DeSoto",
+    "MobileNumber": "1-464-944-5295 x7531",
+    "id": "56"
+  },
+  {
+    "createdAt": "2024-06-20T18:06:36.335Z",
+    "name": "Nadine Pfannerstill",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1064.jpg",
+    "City": "Pasco",
+    "MobileNumber": "898-471-9557",
+    "id": "57"
+  },
+  {
+    "createdAt": "2024-06-21T08:34:30.818Z",
+    "name": "Maureen Borer",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/656.jpg",
+    "City": "Newark",
+    "MobileNumber": "1-602-783-1489 x118",
+    "id": "58"
+  },
+  {
+    "createdAt": "2024-06-21T05:46:09.087Z",
+    "name": "Hubert Haag",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/909.jpg",
+    "City": "Fresno",
+    "MobileNumber": "1-968-572-0127",
+    "id": "59"
+  },
+  {
+    "createdAt": "2024-06-21T11:09:00.694Z",
+    "name": "Leo Ruecker MD",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/830.jpg",
+    "City": "Passaic",
+    "MobileNumber": "(831) 676-1365 x9033",
+    "id": "60"
+  },
+  {
+    "createdAt": "2024-06-21T02:05:53.055Z",
+    "name": "Sam Kreiger",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/502.jpg",
+    "City": "Daytona Beach",
+    "MobileNumber": "(511) 274-0850 x9411",
+    "id": "61"
+  },
+  {
+    "createdAt": "2024-06-20T18:08:46.151Z",
+    "name": "Martin O'Reilly",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/67.jpg",
+    "City": "El Dorado Hills",
+    "MobileNumber": "1-882-298-2163 x67185",
+    "id": "62"
+  },
+  {
+    "createdAt": "2024-06-21T10:09:11.895Z",
+    "name": "Patrick Heller DVM",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1086.jpg",
+    "City": "Hollywood",
+    "MobileNumber": "1-702-305-3761 x72887",
+    "id": "63"
+  },
+  {
+    "createdAt": "2024-06-21T08:19:43.756Z",
+    "name": "Mrs. Mercedes Cummerata",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/153.jpg",
+    "City": "Newark",
+    "MobileNumber": "933.215.7626 x597",
+    "id": "64"
+  },
+  {
+    "createdAt": "2024-06-21T03:55:50.004Z",
+    "name": "Marcus Dach",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/88.jpg",
+    "City": "Jeffersonville",
+    "MobileNumber": "1-460-314-8724",
+    "id": "65"
+  },
+  {
+    "createdAt": "2024-06-20T13:51:13.225Z",
+    "name": "Leslie Schimmel PhD",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1139.jpg",
+    "City": "Freeport",
+    "MobileNumber": "(503) 692-0981 x6729",
+    "id": "66"
+  },
+  {
+    "createdAt": "2024-06-20T23:23:25.818Z",
+    "name": "Lynn Muller",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/498.jpg",
+    "City": "Madison",
+    "MobileNumber": "651.895.1457 x9462",
+    "id": "67"
+  },
+  {
+    "createdAt": "2024-06-21T01:33:18.077Z",
+    "name": "Julius Stokes",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/368.jpg",
+    "City": "Hoover",
+    "MobileNumber": "1-345-818-5785",
+    "id": "68"
+  },
+  {
+    "createdAt": "2024-06-20T20:09:31.938Z",
+    "name": "Heather Collier",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/443.jpg",
+    "City": "West Palm Beach",
+    "MobileNumber": "817.756.2010 x0983",
+    "id": "69"
+  },
+  {
+    "createdAt": "2024-06-20T12:35:34.888Z",
+    "name": "Kelvin Wilkinson",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/125.jpg",
+    "City": "Largo",
+    "MobileNumber": "(306) 420-1541 x685",
+    "id": "70"
+  },
+  {
+    "createdAt": "2024-06-20T15:56:23.414Z",
+    "name": "Marlon Reinger",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1055.jpg",
+    "City": "Pomona",
+    "MobileNumber": "1-749-852-4311 x301",
+    "id": "71"
+  },
+  {
+    "createdAt": "2024-06-21T01:21:21.773Z",
+    "name": "Orville Konopelski Jr.",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/781.jpg",
+    "City": "Towson",
+    "MobileNumber": "(334) 224-2148 x8592",
+    "id": "72"
+  },
+  {
+    "createdAt": "2024-06-21T08:09:07.060Z",
+    "name": "Leo Champlin Jr.",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/140.jpg",
+    "City": "Salt Lake City",
+    "MobileNumber": "292-433-6921 x1861",
+    "id": "73"
+  },
+  {
+    "createdAt": "2024-06-20T14:36:30.905Z",
+    "name": "Maureen Bahringer MD",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/788.jpg",
+    "City": "West Haven",
+    "MobileNumber": "(305) 366-0281",
+    "id": "74"
+  },
+  {
+    "createdAt": "2024-06-21T02:33:12.932Z",
+    "name": "Dr. Olive Baumbach",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1110.jpg",
+    "City": "Ocala",
+    "MobileNumber": "1-922-292-8799 x39629",
+    "id": "75"
+  }
+]
+
+        document.write("<table border='1' cellspacing='5' cellpadding='5'>");
+           
+                
+                  for(i=0;i<75;i++){
+                    document.write("<tr>");
+                    document.write("<td>");
+                    document.write(Faculty[i].createdAt);
+                    document.write("</td>");
+                    document.write("<td>");
+                    document.write(Faculty[i].name);
+                    document.write("</td>");
+                    document.write("<td>");
+                    document.write("<img src='Student[i].avatar'>");
+                    document.write("</td>");
+                    document.write("<td>");
+                    document.write(Faculty[i].City);
+                    document.write("</td>");
+                    document.write("<td>");
+                    document.write(Faculty[i].MobileNumber);
+                    document.write("</td>");
+                    document.write("<td>");
+                    document.write(Faculty[i].id);
+                    document.write("</td>");
+                    document.write("</tr>");
+                  }
+                
+                
+                
+             
+        document.write("</table>");
+    </script>
+</body>
+</html>
