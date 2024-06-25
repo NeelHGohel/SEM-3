@@ -11,16 +11,48 @@ if it is not a number ,it should show “not a number” message in the result b
 </head>
 <body>
     <script>
-        let n = Number(prompt("Enter a number: "));
-        if(n>999){
+       let n = prompt("Enter a number: ");
+        if(n<0 || n>999){
             alert("Number is out of range");
         }
+        else if (isNaN(n)){
+            alert("Enter a valid number");
+        }
+        else if(n== null || n==''){
+            alert("Empty")
+        }
+        else{
+            var a = ['zero','one', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
+            var b = ['','Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
+            var c = ['','', 'Twenty', 'Thirty', 'Fourty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
+            var result = ''
+            if(n>=100){
+                result += a[Math.floor(n/100)]+'Hundered'
+                n %= 100;
+            }
+            if(n>=20){
+                result += c[Math.floor(n/10)]
+                n%=10;
+            }
+            else if(n>=10){
+                result += b[n-10]
+                n=0
+            }
+            if(n>0){
+                result+=a[n]
+            }
+        }
+
+        document.write(result.trim());
+        // document.write(result)
+        
+        
     </script>
 </body>
 </html>
 
 
-//one =a
+<!-- //one =a
 //ten twenty=b
 //one hundered=c
 //number n 
@@ -30,4 +62,4 @@ if it is not a number ,it should show “not a number” message in the result b
 //
 
 
-//
+// -->

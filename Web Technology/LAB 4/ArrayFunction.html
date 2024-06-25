@@ -8,7 +8,8 @@
 <body>
     <script>
         let a = ['neel', 'Gohel', 'Darshan', 'Rajkot']
-
+        let b = [1,9,8,5,7,3]
+        let c = ['a','s','d','f','g','h']
         //push
         a.push('Gujrat')
         document.write(a);
@@ -40,12 +41,27 @@
         document.write("</br>");
 
         //splice
-        a.splice(1);
+        a.splice(2,1);
         document.write(a);
         document.write("</br>");
-        document.write("number thi splice thai means add thai means ke 1 aapi ne to khali neel j print thai");
+        document.write("first jyathi delete karva hoi ne coma kari ne jetla delete karva hoi te")
         document.write("</br>");
         document.write("</br>");
+
+        //sort
+        b = b.sort();
+        document.write(b);
+        document.write("</br>");
+        document.write("</br>");
+
+        //slice
+        let temp = c.slice(1,3);
+        
+        document.write(temp);
+        document.write("</br>");
+        // document.write("first jyathi delete karva hoi ne coma kari ne jetla delete karva hoi te")
+        document.write("</br>");
+        document.write("</br>");        
 
 
     </script>
