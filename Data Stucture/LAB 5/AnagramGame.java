@@ -17,21 +17,28 @@ public class AnagramGame {
         String temp = sc.next();
 
         String temp1 = str[ram];
-        char a[] = temp.toCharArray();
-        char b[] = temp1.toCharArray();
-        if (temp.length() == temp1.length()) {
 
+        if (temp.length() != temp1.length()) {
+            System.out.println("Not anagram");
+            return;
+
+        } else {
+            char a[] = temp.toCharArray();
+            char b[] = temp1.toCharArray();
             Arrays.sort(a);
             Arrays.sort(b);
             // System.out.println(a);
-
-            if (a.equals(b)) {
-                System.out.println("Yes");
+            int c = 0;
+            for (int i = 0; i < a.length; i++) {
+                if (a[i] != b[i]) {
+                    c++;
+                }
             }
-        } else {
-
-            System.out.println("Not");
-
+            if (c == 0) {
+                System.out.println("anagram is " + a);
+            } else {
+                System.out.println("Not anagram");
+            }
         }
     }
 }
