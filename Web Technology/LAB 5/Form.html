@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <form>
+        <table>
+            <div class="Name">
+                <tr>
+                    <td>Enter Username</td>
+                    <td><input type="text" placeholder="Username" id="Username"/></td>
+                </tr>
+            </div>
+            <div class="Password">
+                <tr>
+                    <td>Enter Password</td>
+                    <td><input type="password" placeholder="Enter Password"/></td>
+                </tr>
+            </div>
+            <div class="Re-Password">
+                <tr>
+                    <td>Re-Enter Password</td>
+                    <td><input type="password" placeholder="Re-Enter Password"/></td>
+                </tr>
+            </div>
+            <div class="Birth-Date">
+                <tr>
+                    <td>Birth-Date</td>
+                    <td><input type="date" placeholder="Enter Your Birth-date"/></td>
+                </tr>
+            </div>
+            <div class="Enrollnment">
+                <tr>
+                    <td>Enter Enrollnment Number</td>
+                    <td><input type="text" placeholder="Enter Enrollnment Number"/></td>
+                </tr>
+            </div>
+            <div class="E-mail">
+                <tr>
+                    <td>Enter E-mail</td>
+                    <td><input type="text" placeholder="Enter E-mail" id="E-mail"/></td>
+                </tr>
+            </div>
+            <div class="submit" >
+                <tr>
+                    <td><input type="submit" id="submit" onclick=checkmail()/></td>
+                </tr>
+            </div>
+        </table>
+    </form>
+
+    <script>
+        function checkmail(){
+            var a = document.getElementById("E-mail").value;
+            var pattern = "^[\\w-\.]*[\\w-_\.]\@[\\w]\.+[\\w]+[\\w]$";
+            var regex  = new Regex(pattern);
+            
+            if(regex.test(a)){
+                alert("valid");
+
+            }
+            else{
+                alert("Invalid");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
