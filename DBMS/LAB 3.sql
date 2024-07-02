@@ -20,6 +20,46 @@ SELECT * FROM T20;
 SELECT * INTO IPL FROM CRICKET WHERE 2=20;
 SELECT * FROM IPL;
 
+--PART B
+CREATE TABLE EMPLOYEE(
+	NAME VARCHAR(50),
+	CITY VARCHAR(50),
+	AGE INT
+);
+INSERT INTO EMPLOYEE VALUES('JAY PATEL','RAJKOT',30);
+INSERT INTO EMPLOYEE VALUES('RAHUL DAVE','BARODA',35);
+INSERT INTO EMPLOYEE VALUES('JEET PATEL','SURAT',31);
+INSERT INTO EMPLOYEE VALUES('VIJAY RAVAL','RAJKOT',30);
+
+SELECT * FROM EMPLOYEE;
+
+--1.Create table Employee_detail from Employee with all the columns and data.
+SELECT * INTO EMPLOYEE_DETAIL FROM EMPLOYEE;
+SELECT * FROM EMPLOYEE_DETAIL;
+
+--2.Create table Employee_data from Employee with first two columns with no data.
+SELECT NAME,CITY INTO EMPLOYEE_DATA FROM EMPLOYEE WHERE 1=0;
+SELECT * FROM EMPLOYEE_DATA;
+
+--3.Create table Employee_info from Employee with no Data
+SELECT * INTO EMPLOYEE_INFO FROM EMPLOYEE WHERE 1=0;
+SELECT * FROM EMPLOYEE_INFO;
+
+
+--Part – C:
+--Perform following queries on Employee table.
+
+--1.Insert the Data into Employee_info from Employee whose CITY is Rajkot
+INSERT INTO EMPLOYEE_INFO SELECT * FROM EMPLOYEE WHERE CITY='RAJKOT';
+SELECT * FROM EMPLOYEE_INFO;
+
+--2.Insert the Data into Employee_info from Employee whose age is more than 32.
+INSERT INTO EMPLOYEE_INFO SELECT * FROM EMPLOYEE WHERE AGE>32;
+SELECT * FROM EMPLOYEE_INFO;
+
+
+
+
 --Update Operation
 --Part – A:
 --From the above given tables perform the following queries (UPDATE Operation):
@@ -65,5 +105,36 @@ UPDATE DEPOSIT SET AMOUNT=5000,ADATE='1996-04-01' WHERE CNAME='PRAMOD';
 SELECT * FROM DEPOSIT;
 
 
+--Part – B:
+--1.Give 10% Increment in Loan Amount. (Use Borrow Table)
+SELECT * FROM BORROW;
 
---PART B
+--2.Customer deposits additional 20% amount to their account, update the same. (Use Deposit Table)
+
+
+--Part – C:
+--1.Update amount of loan no 321 to NULL. (Use Borrow Table)
+UPDATE BORROW SET AMOUNT = NULL WHERE LOANNO=321; 
+SELECT * FROM BORROW;
+
+--2.Update branch name of KRANTI to NULL (Use Borrow Table)
+UPDATE BORROW SET CNAME = NULL WHERE CNAME='KRANTI';
+
+--3.Display the name of borrowers whose amount is NULL. (Use Borrow Table)
+SELECT * FROM BORROW WHERE AMOUNT IS NULL;
+
+--4.Display the Borrowers whose having branch. (Use Borrow Table)
+SELECT * FROM BORROW WHERE CNAME IS NOT NULL;
+
+--5.Update the Loan Amount to 5000, Branch to VRCE & Customer Name to Darshan whose loan no is 481. (Use Borrow Table)
+UPDATE BORROW SET AMOUNT=5000, BNAME= 'VRCE' , CNAME='DARSHAN' WHERE LOANNO=481;
+SELECT * FROM BORROW;
+
+--6.Update the Deposit table and set the date to 01-01-2021 for all the depositor whose amount is less than 2000.
+SELECT * FROM DEPOSIT;
+UPDATE DEPOSIT SET ADATE='2021-01-01' WHERE AMOUNT<2000;
+
+--7.Update the Deposit table and set the date to NULL & Branch name to ‘ANDHERI whose Account No is 110.
+UPDATE DEPOSIT SET ADATE = NULL , BNAME = 'ANDHERI' WHERE ACTNO = 110
+
+

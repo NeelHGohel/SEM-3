@@ -9,7 +9,7 @@
 
 <body>
     <form>
-        <table>
+        <table border="3" >
             <div class="Name">
                 <tr>
                     <td>Enter Username</td>
@@ -43,7 +43,7 @@
             <div class="E-mail">
                 <tr>
                     <td>Enter E-mail</td>
-                    <td><input type="text" placeholder="Enter E-mail" id="E-mail"/></td>
+                    <td><input type="email" placeholder="Enter E-mail" id="E-mail"/></td>
                 </tr>
             </div>
             <div class="submit" >
@@ -57,7 +57,7 @@
     <script>
         function checkmail(){
             var a = document.getElementById("E-mail").value;
-            var pattern = "^[\\w-\.]*[\\w-_\.]\@[\\w]\.+[\\w]+[\\w]$";
+           
             var regex  = new Regex(pattern);
             
             if(regex.test(a)){
