@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class MethodsOfStack {
     public static void main(String[] args) {
         Scanner sc1 = new Scanner(System.in);
-        int n;
+        int n=0;
         Stack s1 = new Stack(n);
         
         System.out.println("Enter");
