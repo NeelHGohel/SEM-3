@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prgram-8</title>
+    <style>
+        .target{
+            
+        }
+    </style>
+</head>
+<body>
+    <h4 onmouseover="y()" onmouseout="b()">Heading</h4>
+    <br>
+    <button onclick="abc()">Find Time</button>
+    <span id="date"></span>
+    <br>
+    <br>
+    <button onclick="r()">Red</button>
+    <br>
+    <br>
+    <button onclick="g()">Green</button>
+    <script>
+        function y(){
+            document.body.style.color="yellow";
+        }
+        function b(){
+            document.body.style.olor="black";
+        }
+        function abc(){
+            let date = new Date();
+            document.getElementById('date').innerHTML = date;
+        }
+        function r(){
+            document.body.style.backgroundColor="red";
+        }
+        function g(){
+            document.body.style.backgroundColor="green";
+        }
+    </script>
+</body>
+</html>

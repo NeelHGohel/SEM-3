@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key-Board Event</title>
+</head>
+<body>
+    <input type="text" onkeydown="down()" onkeyup="up()" onkeypress="press()">
+
+    <script>
+        function down(){
+            alert("You press down key");
+            document.body.style.backgroundColor="red";
+        }
+        function up(){
+            alert("You press up key");
+            document.body.style.backgroundColor="black";
+        }
+        function press(){
+            alert("You press some key");
+            document.body.style.backgroundColor="blue";
+        }
+    </script>
+</body>
+</html>
