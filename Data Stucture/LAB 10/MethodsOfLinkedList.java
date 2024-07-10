@@ -6,56 +6,76 @@ public class MethodsOfLinkedList {
         Scanner sc = new Scanner(System.in);
         LinkedList l1 = new LinkedList();
         System.out.println("Enter ");
-        System.out.println("1 for insert at first \n" + "2 for insert at last \n" + "3 for insert in order");
+        System.out.println("1 for insert at first \n" + "2 for insert at last \n" + "3 for insert in order \n"
+                + "4 to Delete an Element\n" + "5 for count Node\n" + "6 for break");
         int temp = sc.nextInt();
-        switch (temp) {
-            case 1:
-                System.out.println("Enter element to insert at first");
-                int x = sc.nextInt();
-                l1.insertAtFirst(x);
-                break;
-        
-            case 2:
-                System.out.println("Enter element to insert at last");
-                int x1 = sc.nextInt();
-                l1.insertAtLast(x1);
-                break;
-            case 3:
-                System.out.println("Enter element to insert in order");
-                int o = sc.nextInt();
-                l1.insertInOrder(o);
+        boolean Flag = true;
+        while (Flag) {
+            switch (temp) {
+                case 1:
+                    System.out.println();
+                    System.out.println("Enter element to insert at first");
+                    int x = sc.nextInt();
+                    l1.insertAtFirst(x);
+                    l1.display();
+                    break;
+
+                case 2:
+                    System.out.println();
+                    System.out.println("Enter element to insert at last");
+                    int x1 = sc.nextInt();
+                    l1.insertAtLast(x1);
+                    l1.display();
+                    break;
+                case 3:
+                    System.out.println();
+                    System.out.println("Enter element to insert in order");
+                    int o = sc.nextInt();
+                    l1.insertInOrder(o);
+                    l1.display();
+                case 4:
+                    l1.deleteElement();
+                    l1.display();
+                case 5:
+                    l1.CountNodes();
+                case 6:
+                    Flag = false;
+                    break;
+            }
         }
-        
+
     }
 }
-class LinkedList{
-    class Node{
+
+class LinkedList {
+    class Node {
         int info;
         Node link;
 
-        Node(int data){
+        Node(int data) {
             this.info = data;
             this.link = null;
         }
     }
+
     public Node first = null;
 
-    public void insertAtFirst(int data){
+    public void insertAtFirst(int data) {
         Node n1 = new Node(data);
 
-        if(first == null){
+        if (first == null) {
             first = n1;
             return;
-        }
-        else{
+        } else {
             n1.link = first;
             first = n1;
         }
     }
-    public void insertAtLast(int data){
+
+    public void insertAtLast(int data) {
         Node n1 = new Node(data);
 
-        if(first==null){
+        if (first == null) {
             first = n1;
             return;
         }
@@ -65,10 +85,11 @@ class LinkedList{
         }
         last.link = n1;
     }
-    public void insertInOrder(int data){
+
+    public void insertInOrder(int data) {
         Node n1 = new Node(data);
 
-        if(first == null){
+        if (first == null) {
             n1.link = null;
             return;
         }
@@ -84,30 +105,58 @@ class LinkedList{
         save.link = n1;
         return;
     }
-    public void deleteElement(int data){
+
+    public void deleteElement() {
         Scanner sc1 = new Scanner(System.in);
         System.out.println("Enter elemnet to delete");
         int d = sc1.nextInt();
 
-        if(first == null){
+        if (first == null) {
             System.out.println("Under-Flow");
             return;
         }
         Node save = first;
-
-        while (save.info != d && save != null ) {
-            Node pred = save;
+        Node pred = save;
+        while (save.info != d && save != null) {
+            pred = save;
             save = save.link;
         }
-        if(save.info != d){
+        if (save.info != d) {
             System.out.println("Node Not Found");
             return;
         }
-        if(first.info == d){
+        if (first.info == d) {
             first = first.link;
+        } else {
+            pred.link = save.link;
         }
-        else{
-            
+    }
+
+    public void CountNodes() {
+        if (first == null) {
+            System.out.println("Under-Flow");
+            return;
         }
+        Node save = first;
+        int count = 0;
+        while (save.link != null) {
+            save = save.link;
+            count++;
+        }
+        System.out.println("Total nodes is =" + count);
+    }
+
+    public void display() {
+        if (first == null) {
+            System.out.println("Linked List is empty");
+            return;
+        }
+        System.out.println("list is : ");
+        Node temp = first;
+        while (temp != null) {
+            System.out.print(temp.info + "=>");
+            temp = temp.link;
+        }
+
     }
 }
