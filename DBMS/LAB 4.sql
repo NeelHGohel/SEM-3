@@ -105,3 +105,8 @@ DELETE FROM EMPLOYEE_MASTER WHERE CITY IS NOT NULL;
 TRUNCATE TABLE EMPLOYEE_MASTER;
 --8.Remove Employee_MASTER table. (Use Drop)
 DROP TABLE EMPLOYEE_MASTER;
+
+--Part – C:
+--1.
+--Summarize Delete, Truncate and Drop  
+--already done above.........
