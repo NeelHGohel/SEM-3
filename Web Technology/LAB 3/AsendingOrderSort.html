@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asending Order Sort</title>
+</head>
+
+<body>
+    <script>
+        n = parseInt(prompt("Enter array size"))
+        let arr = [];
+        for (i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Enter element"))
+        }
+        for (i = 0; i < n; i++) {
+            min = arr[i];
+            ind = i;
+
+            for (j = i + 1; j < n; j++) {
+                if (arr[j] < min) {
+                    min = arr[j]
+                    ind = j
+                }
+            }
+            temp = arr[i];
+            arr[i] = min;
+            arr[ind] = temp;
+        }
+        for (i = 0; i < n; i++) {
+            document.write(arr[i] + " ")
+        }
+    </script>
+</body>
+
+</html>

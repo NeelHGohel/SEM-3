@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+
+<body>
+    <script>
+        let n = (prompt("Enter a number or String: "));
+        let count = 0;
+        let j = n.length - 1
+        for (let i = 0; i < n.length / 2; i++) {
+            if (n[i] != n[j]) {
+                count++;
+            }
+            j--;
+        }
+        if (count == 0) {
+            alert("Palindrome");
+        }
+        else {
+            alert("Not palindrome");
+        }
+    </script>
+</body>
+
+</html>
