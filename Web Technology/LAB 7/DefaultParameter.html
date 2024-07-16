@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>callBack</title>
+    <title>Default Parameter</title>
 </head>
 <body>
     <script>
-        function hello(){
-            document.write("Helo Hello")
-        }
-        function add(num1,num2,callBack){
+        function add(num1,num2=20){
             document.write(num1+num2+" ");
-            callBack();
         }
-
-        add(50,50,hello);
+        document.write("Not Default");
+        add(50,50);
+        document.write("<br/>")
+        document.write("Default");
+        add(50);
     </script>
 </body>
 </html>

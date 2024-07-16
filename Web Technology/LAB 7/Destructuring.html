@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructure</title>
+</head>
+<body>
+    <script>
+        stu1 = {
+            name : "neel",
+            rollNo : 123,
+            division : "3A",
+            cource : "CSE"
+        }
+        document.write("Object");
+        document.write("<br/>")
+        let {name , rollNo , division , cource} = stu1;
+        document.write(name);
+        document.write("<br/>")
+        document.write("<br/>")
+        document.write("Array")
+        document.write("<br/>")
+        a = [1,2,3,4,5];
+        let [first ,second , third] = a;
+        document.write(second);
+    </script>
+</body>
+</html>
