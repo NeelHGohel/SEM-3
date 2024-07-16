@@ -17,10 +17,11 @@ public class StringBalance {
             if (c == '(' || c == '{' || c == '[') {
                 st.push(c);
             } else {
-                if (st.empty())
+                if (st.isEmpty()){
                     return 1;
+                }
                 char ch1 = st.pop();
-                if (ch1 == ')' && ch1 != '(' || ch1 == ']' && ch1 != '[' || ch1 == '}' && ch1 != '{') {
+                if (c == ')' && ch1 != '(' || c == ']' && ch1 != '[' || c == '}' && ch1 != '{') {
                     return 0;
                 }
             }
