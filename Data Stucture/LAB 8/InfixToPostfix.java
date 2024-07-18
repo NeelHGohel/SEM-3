@@ -70,6 +70,7 @@ public class InfixToPostfix {
             }
             return 7;
         }
+        
 
         public static  int G(char a){
             if(a== '+' || a== '-'){

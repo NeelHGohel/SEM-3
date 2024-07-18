@@ -26,7 +26,7 @@ public class ImplementNodeStructure {
         }
 
         public void display() {
-            System.out.println("Data = " + this.info); // Print the data of the node
+            System.out.println("Data = " + this.info);
         }
     }
 

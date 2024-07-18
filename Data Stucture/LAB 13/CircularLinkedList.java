@@ -1,18 +1,19 @@
 import java.util.Scanner;
 
-public class CicularLinkedList {
+public class CircularLinkedList {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int x , temp;
+        int x, temp;
         LinkedList cll = new LinkedList();
         boolean Flag = true;
         while (Flag) {
-            System.out.println("Enter 1 for insert at first" + "\n"+
-            "2 for insert at last"+ "\n" +
-            "3 for inset into Ordered Position" + "\n"+
-            "4 Delete a node at position" + "\n"+
-            "5 for display"+ "\n" +
-            "6 for break");
+            System.out.println("Enter" + "\n" +
+                    " 1 for insert at first" + "\n" +
+                    "2 for insert at last" + "\n" +
+                    "3 for insert into Ordered Position" + "\n" +
+                    "4 Delete a node at position" + "\n" +
+                    "5 for display" + "\n" +
+                    "6 for break");
 
             temp = sc.nextInt();
 
@@ -45,10 +46,13 @@ public class CicularLinkedList {
                     cll.display();
                     break;
                 case 6:
-                Flag = false;
-                break;
+                    Flag = false;
+                    break;
+                default:
+                    System.out.println("Invalid choice");
             }
         }
+        sc.close();
     }
 }
 
@@ -68,7 +72,6 @@ class LinkedList {
 
     public void insertAtFirstInCLL(int data) {
         Node n1 = new Node(data);
-        n1.info = data;
         if (first == null) {
             first = n1;
             last = n1;
@@ -82,48 +85,44 @@ class LinkedList {
 
     public void insertAtLastInCLL(int data) {
         Node n1 = new Node(data);
-        n1.info = data;
         if (first == null) {
             first = n1;
             last = n1;
             last.link = first;
-        } 
-        else {
+        } else {
             n1.link = first;
             last.link = n1;
             last = n1;
         }
     }
+
     public void insertInOrderInCLL(int data) {
         Node n1 = new Node(data);
-        n1.info = data;
-
         if (first == null) {
             first = n1;
             last = n1;
-        }
-        if(n1.info <= first.info){
+            last.link = first;
+        } else if (n1.info <= first.info) {
             n1.link = first;
             last.link = n1;
             first = n1;
-            return;
+        } else {
+            Node save = first;
+            while (save.link != first && n1.info >= save.link.info) {
+                save = save.link;
+            }
+            n1.link = save.link;
+            save.link = n1;
+            if (save == last) {
+                last = n1;
+            }
         }
-        Node save = first;
-        while (save != last && n1.info >= save.link.info) {
-            save = save.link;
-        }
-        n1.link = save.link;
-        save.link = n1;
-
-        if(save == last){
-            last = n1;
-        }
-        return;
     }
 
-    public void deleteElementInCLL(int Position){
+    public void deleteElementInCLL(int Position) {
         if (first == null) {
-            System.out.println("Linked List is empty no node to delete");
+            System.out.println("Linked List is empty, no node to delete");
+            return;
         }
         if (Position == 1) {
             if (first == last) {
@@ -132,33 +131,42 @@ class LinkedList {
                 first = first.link;
                 last.link = first;
             }
+            return;
         }
-        int count=0;
-        Node save = first.link;
-        Node PRED = first;
-        while (save != PRED) {
-            count++;
-            if (count == Position) {
-                PRED.link = save.link;
-                if (save == last) {
-                    last = PRED;
-                }
-                return;
-            }
+        int count = 1;
+        Node save = first;
+        Node PRED = null;
+        while (save != last) {
             PRED = save;
             save = save.link;
+            count++;
+            if (count == Position) {
+                break;
+            }
+        }
+        if (count == Position) {
+            if (save == last) {
+                last = PRED;
+            }
+            if (PRED != null) {
+                PRED.link = save.link;
+            }
+        } else {
+            System.out.println("Position out of range");
         }
     }
-
 
     public void display() {
+        if (first == null) {
+            System.out.println("Circular Linked List is empty");
+            return;
+        }
         Node temp = first;
-        while (temp.link != first) {
+        do {
             System.out.print(temp.info + " -> ");
             temp = temp.link;
-        }
-        System.out.println(temp.info);
+        } while (temp != first);
+        System.out.println("(back to start)");
         System.out.println();
     }
-
 }

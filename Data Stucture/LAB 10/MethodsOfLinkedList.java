@@ -148,15 +148,15 @@ class LinkedList {
 
     public void display() {
         if (first == null) {
-            System.out.println("Linked List is empty");
+            System.out.println("Circular Linked List is empty");
             return;
         }
-        System.out.println("list is : ");
         Node temp = first;
-        while (temp != null) {
-            System.out.print(temp.info + "=>");
+        do {
+            System.out.print(temp.info + " -> ");
             temp = temp.link;
-        }
-
+        } while (temp != first);
+        System.out.println("(back to start)");
+        System.out.println();
     }
 }
