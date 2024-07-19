@@ -8,7 +8,7 @@ public class CircularLinkedList {
         boolean Flag = true;
         while (Flag) {
             System.out.println("Enter" + "\n" +
-                    " 1 for insert at first" + "\n" +
+                    "1 for insert at first" + "\n" +
                     "2 for insert at last" + "\n" +
                     "3 for insert into Ordered Position" + "\n" +
                     "4 Delete a node at position" + "\n" +
