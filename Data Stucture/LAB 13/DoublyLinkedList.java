@@ -158,7 +158,7 @@ static class LinkedList {
             System.out.print(temp.info + " -> ");
             temp = temp.rptr;
         }
-        System.out.println(); // Print new line after displaying all elements
+        System.out.println();
     }
 }
 }
