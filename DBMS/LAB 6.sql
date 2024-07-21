@@ -275,7 +275,7 @@ SELECT DATEDIFF(YEAR , '2005-11-30' , GETDATE());
 CREATE TABLE EMP_DETAIL(
 	EMPNO INT,
 	EMPNAME VARCHAR(15),
-	JOININGDATE VARCHAR(25),
+	JOININGDATE DATETIME,
 	SALARY DECIMAL(8,2),
 	CITY VARCHAR(10)
 );
@@ -288,3 +288,43 @@ INSERT INTO EMP_DETAIL VALUES(103 , 'KAJAL' , '06-03-14' , 12000 , 'RAJKOT');
 INSERT INTO EMP_DETAIL VALUES(104 , 'BHOOMI' , '05-06-23' , 12000 , 'RAJKOT');
 INSERT INTO EMP_DETAIL VALUES(105 , 'HARMIT' , '04-02-15' , 12000 , 'RAJKOT');
 INSERT INTO EMP_DETAIL VALUES(106 , 'JAY' , '07-03-12' , 12000 , 'RAJKOT');
+
+--1.Write a query to find new date after 365 day with reference to JoiningDate.
+SELECT DATEADD(D,365 , JOININGDATE ) AS New_Date_After_365_Days FROM EMP_DETAIL;
+
+--2.Display the JoiningDate in a format that appears as may 5 1994 12:00AM.
+SELECT FORMAT(JOININGDATE, 'MMMM d yyyy hh:mm tt') AS Formatted_Date  FROM EMP_DETAIL;
+
+--3.Display the JoiningDate in a format that appears as 03 Jan 1995.
+SELECT FORMAT(JOININGDATE, 'dd MMMM yyyy') AS Formatted_Date FROM EMP_DETAIL;
+
+--4.Display the JoiningDate in a format that appears as Jan 04, 96.
+SELECT FORMAT(JOININGDATE, 'MMMM d, yy') AS Formatted_Date FROM EMP_DETAIL;
+
+--5.Write a query to find out total number of months between JoiningDate and 31-Mar-09.
+SELECT DATEDIFF(MONTH ,'31-MAR-09' , JOININGDATE) AS NO_OF_MONTHS FROM EMP_DETAIL;
+
+--6.Write a query to find out total number of years between JoiningDate and 14-Sep-10.
+SELECT DATEDIFF(YEAR , '14-SEP-10',JOININGDATE) AS NO_OF_YEAR FROM EMP_DETAIL;
+
+
+--Part – C:
+--1.Write a query to extract Day, Month, Year from JoiningDate.
+SELECT DATENAME(DAY , JOININGDATE) AS NO_OF_DAY FROM EMP_DETAIL;
+SELECT DATENAME(MONTH , JOININGDATE) AS NO_OF_MONTH FROM EMP_DETAIL;
+SELECT DATENAME(YEAR , JOININGDATE) AS NO_OF_YEAR FROM EMP_DETAIL;
+
+--2.Write a query that adds 5 years to JoiningDate.
+SELECT DATEADD(YEAR, 5 , JOININGDATE) AS FIVE_YEARS_ADDED FROM EMP_DETAIL;
+
+--3.Write a query to subtract 2 months from JoiningDate.
+SELECT DATEDIFF(MONTH , 02 , JOININGDATE) AS TWO_MONTH_SUBTRACTED FROM EMP_DETAIL;
+
+--4.Extract month from JoiningDate using datename () and datepart () function.
+SELECT DATENAME(DAY , JOININGDATE) AS MONTH_ FROM EMP_DETAIL;
+SELECT DATEPART(DAY , JOININGDATE) AS MONTH_ FROM EMP_DETAIL;
+
+--5.Calculate your age in years and months
+SELECT DATEDIFF(YEAR , '2005-11-30' , GETDATE());
+SELECT DATEDIFF(MONTH , '2005-11-30' , GETDATE());
+
