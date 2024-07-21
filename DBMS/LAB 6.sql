@@ -129,36 +129,40 @@ SELECT SUBSTRING('NEELGOHELH' ,3,10);
 SELECT REPLACE('abc123efg' , '123' , 'XYZ'), REPLACE('abcabcabc' , 'C' , '5');
 
 --6.Write a query to display ASCII code for ‘a’,’A’,’z’,’Z’, 0, 9.
-
+SELECT ASCII('A') AS ASCII_OF_A ,ASCII('a') AS ASCII_OF_a ,ASCII('Z') AS ASCII_OF_Z ,ASCII('z') AS ASCII_OF_z ,ASCII('0') AS ASCII_OF_0, ASCII('9') AS ASCII_OF_9;
 
 --7.Write a query to display character based on number 97, 65,122,90,48,57.
-
+SELECT CHAR('97'), CHAR('65'), CHAR('122'), CHAR('90'), CHAR('48'), CHAR('57');
 
 --8.Write a query to remove spaces from left of a given string ‘ hello world ‘.
-
+SELECT LTRIM(' HELLO WORLD ');
 
 --9.Write a query to remove spaces from right of a given string ‘ hello world ‘.
-
+SELECT RTRIM(' HELLO WORLD ');
 
 --10.Write a query to display first 4 & Last 5 characters of ‘SQL Server’.
-
+SELECT LEFT('SQL SERVER',4) , RIGHT('SQL SERVER' , 5);
 
 --11.Write a query to convert a string ‘1234.56’ to number (Use cast and convert function).
-
+SELECT CAST(1234.56 AS numeric);
+SELECT CONVERT(numeric , 1234.56);
 
 --12.Write a query to convert a float 10.58 to integer (Use cast and convert function).
-
+SELECT CAST(10.58 AS numeric);
+SELECT CONVERT(numeric , 10.58);
 
 --13.Put 10 space before your name using function.
-
+SELECT SPACE(10) + 'NEEL';
 
 --14.Combine two strings using + sign as well as CONCAT ().
-
+SELECT 'NEEL' + 'GOHEL';
+SELECT CONCAT('NEEL' , 'GOHEL');
 
 --15.Find reverse of “Darshan”.
-
+SELECT REVERSE('DARSHAN');
 
 --16.Repeat your name 3 times.
+SELECT REPLICATE('NEEL' , 3);
 
 
 
@@ -167,43 +171,120 @@ SELECT REPLACE('abc123efg' , '123' , 'XYZ'), REPLACE('abcabcabc' , 'C' , '5');
 --Perform following queries on Student table of practical no 5.
 
 --1.Find the length of FirstName and LastName columns.
-
+SELECT LEN(FIRSTNAME) AS LENGTH_OF_FIRSTNAME , LEN(LASTNAME) AS LENGTH_OF_LASTNAME FROM STUDENT;
 
 --2.Display FirstName and LastName columns in lower & upper case.
-
+SELECT LOWER(FIRSTNAME) AS FIRSTNAME_IN_LOWERCASE, LOWER(LASTNAME) AS LASTNAME_IN_LOWERCASE ,UPPER(FIRSTNAME) AS FIRSTNAME_IN_UPPERCASE,UPPER(LASTNAME) AS LASTNAME_IN_UPPERCASE FROM STUDENT;
 
 --3.Display first three characters of FirstName column.
-
+SELECT LEFT(FIRSTNAME,3) FROM STUDENT;
 
 --4.Display 3rd to 10th character of Website column.
-
+SELECT SUBSTRING(WEBSITE , 3, 10) FROM STUDENT;
 
 --5.Write a query to display first 4 & Last 5 characters of Website column.
+SELECT LEFT(WEBSITE , 4) AS FROM_STARTING, RIGHT(WEBSITE , 5) AS FROM_LAST FROM STUDENT;
+
+
 
 
 --Part – C: Perform following queries on Student table of practical no 5.
 
-
 --1.Put 10 space before FirstName using function.
-
+SELECT SPACE(10) + FIRSTNAME FROM STUDENT;
 
 --2.Combine FirstName and LastName columns using + sign as well as CONCAT ().
-
+SELECT FIRSTNAME + LASTNAME FROM STUDENT;
+SELECT CONCAT(FIRSTNAME , LASTNAME) FROM STUDENT;
 
 --3.Combine all columns using + sign as well as CONCAT ().
-
+SELECT  FIRSTNAME + LASTNAME + WEBSITE + ADDRESS + CITY FROM STUDENT;
 
 --4.Find reverse of FirstName column.
-
+SELECT REVERSE(FIRSTNAME) FROM STUDENT;
 
 --5.Repeat FirstName column 3 times
-
+SELECT REPLICATE(FIRSTNAME , 3) FROM STUDENT;
 
 --6.Give the Names which contains 5 characters.
-
+SELECT * FROM STUDENT WHERE FIRSTNAME LIKE '_____';
 
 --7.Combine the result as <FirstName> Lives in <City>.
-
+SELECT FIRSTNAME +' '+ 'Lives In' +' '+ CITY AS RESULT FROM STUDENT;
 
 --8.Combine the result as Student_ID of < FirstName > is <StuID>.
+SELECT CONCAT('Student_ID',' ' , FIRSTNAME ,' ', 'is',' ' , STUID) AS RESULT FROM STUDENT ;
 
+
+
+--Date Functions
+
+
+
+--Part – A:
+
+--1.Write a query to display the current date & time. Label the column Today_Date.
+SELECT GETDATE() AS TODAY_DATE;
+
+--2.Write a query to find new date after 365 day with reference to today.
+SELECT DATEADD(D,365 , GETDATE()) AS New_Date_After_365_Days;
+
+--3.Display the current date in a format that appears as may 5 1994 12:00AM.
+SELECT FORMAT(GETDATE(), 'MMMM d yyyy hh:mm tt') AS Formatted_Date;
+
+--4.Display the current date in a format that appears as 03 Jan 1995.
+SELECT FORMAT(GETDATE(), 'd MMMM yyyy') AS Formatted_Date;
+
+--5.Display the current date in a format that appears as Jan 04, 96.
+SELECT FORMAT(GETDATE(), 'MMMM dd , yy') AS Formatted_Date;
+
+--6.Write a query to find out total number of months between 31-Dec-08 and 31-Mar-09.
+SELECT DATEDIFF(MONTH , '31-DEC-08', '31-MAR-09') AS NO_OF_MONTHS;
+
+--7.Write a query to find out total number of years between 25-Jan-12 and 14-Sep-10.
+SELECT DATEDIFF(YEAR , '14-SEP-10','25-JAN-12') AS NO_OF_YEAR;
+
+--8.Write a query to find out total number of hours between 25-Jan-12 7:00 and 26-Jan-12 10:30.
+SELECT DATEDIFF(HOUR , '25-JAN-12 7:00' , '26-JAN-12 10:30') AS NO_OF_HOUR;
+
+--9.Write a query to extract Day, Month, Year from given date 12-May-16.
+SELECT DATENAME(DAY , '12-MAY-16') AS NO_OF_DAY;
+SELECT DATENAME(MONTH , '12-MAY-16') AS NO_OF_MONTH;
+SELECT DATENAME(YEAR , '12-MAY-16') AS NO_OF_YEAR;
+
+--10.Write a query that adds 5 years to current date.
+SELECT DATEADD(YEAR, 5 , GETDATE()) AS FIVE_YEARS_ADDED;
+
+--11.Write a query to subtract 2 months from current date.
+SELECT DATEDIFF(MONTH , 02 , GETDATE()) AS TWO_MONTH_SUBTRACTED;
+
+--12.Extract month from current date using datename () and datepart () function.
+SELECT DATENAME(DAY , GETDATE()) AS MONTH_;
+SELECT DATEPART(DAY , GETDATE()) AS MONTH_;
+
+--13.Write a query to find out last date of current month.
+SELECT EOMONTH(GETDATE()) AS Last_Date_of_Current_Month;
+
+--14.Calculate your age in years and months.
+SELECT DATEDIFF(YEAR , '2005-11-30' , GETDATE());
+
+
+--Part – B: 
+--Create a table EMP_DETAIL and insert the following records in the table.
+
+CREATE TABLE EMP_DETAIL(
+	EMPNO INT,
+	EMPNAME VARCHAR(15),
+	JOININGDATE VARCHAR(25),
+	SALARY DECIMAL(8,2),
+	CITY VARCHAR(10)
+);
+
+SELECT * FROM EMP_DETAIL;
+
+INSERT INTO EMP_DETAIL VALUES(101 , 'KEYUR' , '02-01-15' , 12000 , 'RAJKOT');
+INSERT INTO EMP_DETAIL VALUES(102 , 'HARDIK' , '04-02-15' , 14000 , 'AHMEDABAD');
+INSERT INTO EMP_DETAIL VALUES(103 , 'KAJAL' , '06-03-14' , 12000 , 'RAJKOT');
+INSERT INTO EMP_DETAIL VALUES(104 , 'BHOOMI' , '05-06-23' , 12000 , 'RAJKOT');
+INSERT INTO EMP_DETAIL VALUES(105 , 'HARMIT' , '04-02-15' , 12000 , 'RAJKOT');
+INSERT INTO EMP_DETAIL VALUES(106 , 'JAY' , '07-03-12' , 12000 , 'RAJKOT');
