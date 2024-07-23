@@ -162,10 +162,11 @@ class LinkedList {
             return;
         }
         Node temp = first;
-        while (temp != first){
+         do{
             System.out.print(temp.info + " -> ");
             temp = temp.link;
         }
+        while (temp != first);
 
         System.out.println();
     }
