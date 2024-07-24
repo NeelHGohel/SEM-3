@@ -39,7 +39,7 @@ public class DoublyLinkedList {
                     l1.display();
                     break;
                 case 4:
-                    System.out.println("Enter a position : ");
+                    System.out.println("Enter a info of that node : ");
                     x = sc.nextInt();
                     l1.delete(x);
                     l1.display();
@@ -128,8 +128,11 @@ public class DoublyLinkedList {
             }
         }
 
-        public void delete(int position) {
-            Node Old = null;
+        public void delete(int x) {
+            Node Old = L;
+            while(Old.info != x && Old.rptr != null){
+                Old = Old.rptr;
+            }
             if (R == null) {
                 System.out.println("Under-Flow");
             }
