@@ -2,118 +2,145 @@ import java.util.Scanner;
 
 public class MethodsOfStack {
     public static void main(String[] args) {
-        Scanner sc1 = new Scanner(System.in);
-        int n=0;
-        Stack s1 = new Stack(n);
-        
-        System.out.println("Enter");
-        System.out.println("1 for PUSH Element");
-        System.out.println("2 for POP Element");
-        System.out.println("3 for PEEP Element");
-        System.out.println("4 for CHANGE Element");
-        System.out.println("5 for DISPLAY Element");
-        int temp  = sc1.nextInt();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a size: ");
+        int n = sc.nextInt();
+
+        Stack s = new Stack(n);
+
+        int x = 1;
         boolean flag = true;
         while (flag) {
-            switch (temp) {
+            System.out.println("Enter" + "\n" +
+                    "1 for push" + "\n" +
+                    "2 for pop" + "\n" +
+                    "3 for peep" + "\n" +
+                    "4 for change" + "\n" +
+                    "5 for display" + "\n" +
+                    "6 for break");
+
+            x = sc.nextInt();
+
+            switch (x) {
                 case 1:
-                    s1.push();
-                    s1.Display();
+                    System.out.println("Enter a element : ");
+                    int element = sc.nextInt();
+                    s.push(element);
+                    s.Display();
                     break;
-            
+
                 case 2:
-                    s1.pop();
-                    s1.Display();
+                    int d = s.pop();
+                    s.Display();
                     break;
+
                 case 3:
-                    s1.Peep();
-                    s1.Display();
+                    System.out.println("Enter index :");
+                    int i = sc.nextInt();
+                    int y = s.peep(i);
+                    s.Display();
+                    System.out.println("Element is = " + y);
                     break;
+
                 case 4:
-                    s1.change();
-                    s1.Display();
+                    System.out.println("Enter index : ");
+                    int j = sc.nextInt();
+                    System.out.println("Enter element : ");
+                    int m = sc.nextInt();
+                    s.change(j, m);
+                    s.Display();
                     break;
+
                 case 5:
-                    s1.Display();
+                    s.Display();
                     break;
+
                 case 6:
                     flag = false;
                     break;
             }
         }
-        
+        sc.close();
     }
 }
-class Stack{
 
-    int top=-1;
-    int n;
-    int S[];
-    Scanner sc =  new Scanner(System.in);
+class Stack {
 
-   public Stack(int n){
-        this.n =n;
+    int[] S;
+    int top;
+
+    public Stack(int n) {
         S = new int[n];
-    }
-    public void push(){
-        System.out.println("Enter element you want to insert: ");
-        int a = sc.nextInt();
-        if(top>=n-1){
-            System.out.println("Stack is OverFlow");
-        }
-        else{
-            top++;
-            S[top] = a;
-        }
+        top = -1;
     }
 
+    public void push(int element) {
 
-    public int pop(){
-        if (top==0) {
-            System.out.println("Stack Is UnderFlow");
-            return(0);
+        if (top >= S.length - 1) {
+            System.out.println("Stack Overflow");
+            return;
         }
-        else{
-            top--;
-            return(S[top+1]);
-        }
+
+        top++;
+
+        S[top] = element;
+        System.out.println("Element pushed");
     }
 
+    public int pop() {
 
-    public int Peep(){
-        System.out.println("Enter the Index: ");
-        int i = sc.nextInt();
+        if (top == -1) {
+            System.out.println("Stack Overflow");
+            return -1;
+        }
 
-        if(top-i+1<=0){
-            System.out.println("Stack UnderFlow");
-            return(0);
-        }
-        else{
-             return(S[top-i+1]);
-        }
+        top--;
+
+        return S[top + 1];
     }
 
-    public int change(){
-        System.out.println("Enter element: ");
-        int x = sc.nextInt();
-        System.out.println("Enter the Index: ");
-        int i = sc.nextInt();
+    public int peep(int i) {
 
-        if(top-i+1<=0){
-            System.out.println("Stack UnderFlow");
-            return(0);
-        }
-        else{
-            (S[top-i+1]) = x;
-            return(1);
+        if (top - i + 1 < 0) {
+            System.out.println("Stack Underflow");
+            return -1;
         }
 
+        return S[top - i + 1];
     }
 
-    public void Display(){
-        System.out.print("Your Stack is = ");
-        for(int j = 0;j<n;j++){
-            System.out.print(S[j]);
+    public void change(int i, int element) {
+
+        if (top - i + 1 < 0) {
+            System.out.println("Stack Underflow");
+            return;
         }
+
+        S[top - i + 1] = element;
+        System.out.println("Element changed");
+    }
+
+    public void display() {
+        System.out.println();
+        for (int i = top; i >= 0; i--) {
+            System.out.print(S[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public void Display() {
+        System.out.println();
+        for (int i = top; i >= 0; i--) {
+            System.out.print(S[i] + " ");
+        }
+        System.out.println();
     }
 }
+
+// public void Display(){
+// System.out.print("Your Stack is = ");
+// for(int j = 0;j<n;j++){
+// System.out.print(S[j]);
+// }
+// }
