@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SimpleQueue {
+public class DoubleEndedQueue{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a size of queue : ");
@@ -9,10 +9,12 @@ public class SimpleQueue {
         boolean flag = true;
         while (flag) {
             System.out.println("\n"+"Enter" + "\n"
-                    + "1 for Enqueue" + "\n"
-                    + "2 for dequeue" + "\n"
-                    + "3 for diplay" + "\n"
-                    + "4 for stop");
+                    + "1 for Insert_Rear" + "\n"
+                    + "2 for Delete_Front" + "\n"
+                    + "3 for Insert_Front" + "\n"
+                    + "4 for Delete_Rear" + "\n"
+                    + "5 for Display" + "\n"
+                    + "6 for Stop");
 
             int temp = sc.nextInt();
 
@@ -20,17 +22,27 @@ public class SimpleQueue {
                 case 1:
                     System.out.println("Enter an element : ");
                     int y = sc.nextInt();
-                    q.Enqueue(y);
+                    q.Insert_Rear(y);
                     q.Display();
                     break;
                 case 2:
-                    q.Dequeue();
+                    q.Delete_Front();
                     q.Display();
                     break;
                 case 3:
+                    System.out.println("Enter an element : ");
+                    int z = sc.nextInt();
+                    q.Insert_Front(z);
                     q.Display();
                     break;
                 case 4:
+                    q.Delete_Rear();
+                    q.Display();
+                    break;
+                case 5:
+                    q.Display();
+                    break;
+                case 6:
                     flag = false;
                     break;
                 default:
@@ -39,7 +51,6 @@ public class SimpleQueue {
         }
     }
 }
-
 class MethodsOfQueue {
 
     int r, f, n;
@@ -51,8 +62,7 @@ class MethodsOfQueue {
         this.n = n;
         Q = new int[n];
     }
-
-    public void Enqueue(int y) {
+    public void Insert_Rear(int y){
         if (r >= n - 1) {
             System.out.println("Queue OverFlow");
             return;
@@ -65,8 +75,7 @@ class MethodsOfQueue {
             return;
         }
     }
-
-    public int Dequeue() {
+    public int Delete_Front(){
         if (f == -1) {
             System.out.println("Queue UnderFlow");
             return -1;
@@ -80,7 +89,34 @@ class MethodsOfQueue {
         }
         return y;
     }
-
+    public void Insert_Front(int z){
+        if(f==-1){
+            System.out.println("Queue Overflow");
+            return;
+        }
+        if(f==-1){
+            f = r = 0;
+        }
+        else{
+            f--;
+        }
+        Q[f] = z;
+        return;
+    }
+    public int Delete_Rear(){
+        if(r==-1){
+            System.out.println("Queue Underflow");
+            return -1;
+        }
+        int y = Q[r];
+        if(r==f){
+            r = f = -1;
+        }
+        else{
+            r--;
+        }
+        return y;
+    }
     public void Display() {
 
         if (f == -1 || r == -1) {

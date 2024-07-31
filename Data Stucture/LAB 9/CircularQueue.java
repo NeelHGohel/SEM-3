@@ -8,7 +8,7 @@ public class CircularQueue {
         MethodsOfQueue q = new MethodsOfQueue(n1);
         boolean flag = true;
         while (flag) {
-            System.out.println("Enter" + "\n"
+            System.out.println("\n"+"Enter" + "\n"
                     + "1 for Enqueue" + "\n"
                     + "2 for dequeue" + "\n"
                     + "3 for diplay" + "\n"
@@ -54,7 +54,7 @@ class MethodsOfQueue {
 
     public void EnqueueInCircular(int y) {
         if (r == n) {
-            r = 1;
+            r = 0;
         } else {
             r++;
         }
@@ -65,7 +65,7 @@ class MethodsOfQueue {
         CQ[r] = y;
 
         if (f == -1) {
-            f = 1;
+            f = 0;
             return;
         }
     }
@@ -78,11 +78,11 @@ class MethodsOfQueue {
         int y = CQ[f];
 
         if (f == r) {
-            f = r = 0;
+            f = r = -1;
             return y;
         }
         if (f == n - 1) {
-            f = 1;
+            f = 0;
         } else {
             f++;
         }
@@ -90,6 +90,12 @@ class MethodsOfQueue {
     }
 
     public void Display() {
-
+        if (f==-1 || r==-1) {
+            System.out.println("Queue Is Empty");
+            return;
+        }
+        for(int i=f; i<=r;i++){
+            System.out.print(CQ[i] + "**");
+        }
     }
 }
