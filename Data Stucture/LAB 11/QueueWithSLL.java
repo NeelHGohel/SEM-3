@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class QueueWithSLL {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // LinkedList l1 = new LinkedList();
         Node n = new Node(0);
         boolean flag = true;
         while (flag) {
@@ -37,7 +38,6 @@ public class QueueWithSLL {
         }
     }
 }
-
 class Node {
     Node front;
     Node rear;
@@ -50,6 +50,7 @@ class Node {
         this.front = null;
         this.rear = null;
     }
+
 
     public void EnqueueWithLL(int y) {
         Node n1 = new Node(y);
@@ -91,3 +92,4 @@ class Node {
         System.out.println();
     }
 }
+
