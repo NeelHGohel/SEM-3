@@ -121,14 +121,6 @@ class Stack {
         System.out.println("Element changed");
     }
 
-    public void display() {
-        System.out.println();
-        for (int i = top; i >= 0; i--) {
-            System.out.print(S[i] + " ");
-        }
-        System.out.println();
-    }
-
     public void Display() {
         System.out.println();
         for (int i = top; i >= 0; i--) {
@@ -137,10 +129,3 @@ class Stack {
         System.out.println();
     }
 }
-
-// public void Display(){
-// System.out.print("Your Stack is = ");
-// for(int j = 0;j<n;j++){
-// System.out.print(S[j]);
-// }
-// }
