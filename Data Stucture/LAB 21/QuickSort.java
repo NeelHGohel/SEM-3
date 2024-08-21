@@ -10,7 +10,7 @@ public class QuickSort {
             System.out.print("Insert Element  ");
             a[i] = sc.nextInt();
         }
-        QuickSort(a,0,n-1);
+        quickSort(a, 0, n - 1);
 
         System.out.println("Sorting complete");
         for (int i = 0; i < a.length; i++) {
@@ -18,34 +18,39 @@ public class QuickSort {
         }
         sc.close();
     }
-    public static  void QuickSort(int a[],int lb,int ub){
-        boolean flag = true;
-        int i = 0 , j = 0 , key = 0;
-        if(lb<ub){
-            i = lb;
-            j = ub+1;
-            key = a[lb];
+
+    public static void quickSort(int[] a, int lb, int ub) {
+        if (lb < ub) {
+            int keyIndex = partition(a, lb, ub);
+            quickSort(a, lb, keyIndex - 1);
+            quickSort(a, keyIndex + 1, ub);
         }
-        while(flag){
-            i++;
-            while(a[i] < key){
+    }
+
+    public static int partition(int[] a, int lb, int ub) {
+        int key = a[lb];
+        int i = lb;
+        int j = ub;
+
+        while (i < j) {
+            while (i <= ub && a[i] <= key) {
                 i++;
             }
-            j--;
 
-            while(a[j] > key){
+            while (a[j] > key) {
                 j--;
             }
 
-            if(i<j){
+            if (i < j) {
                 int temp = a[i];
                 a[i] = a[j];
                 a[j] = temp;
             }
-            else{
-                flag = false;
-            }
         }
 
+        int temp = a[lb];
+        a[lb] = a[j];
+        a[j] = temp;
+        return j;
     }
 }
