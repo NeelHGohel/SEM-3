@@ -79,15 +79,13 @@ WHERE NO IN
 --Part – B:
 
 --1.Display name of students who are either from computer department or from mechanical department.
+SELECT * FROM STUDENT_DATA 
+WHERE DID IN 
+(SELECT DID FROM DEPARTMENT WHERE DNAME IN   ('COMPUTER' , 'MECHANICAL'));
 --2.Display name of students who are in same department as 102 studying in.
-
-
---Part – C:
-
---1.Display name of students whose SPI is more than 9 and who is from electrical department.
---2.Display name of student who is having second highest SPI.
---3.Display city names whose students branch wise SPI is 9.2.
-
+SELECT * FROM STUDENT_DATA
+WHERE DID IN
+(SELECT DID FROM DEPARTMENT WHERE DID = 20);
 
 
 --SET Operators
