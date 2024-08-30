@@ -9,6 +9,7 @@ public class MethodsOfLinkedList {
         System.out.println("1 for insert at first \n" + "2 for insert at last \n" + "3 for insert in order \n"
                 + "4 to Delete an Element\n" + "5 for count Node\n" + "6 for break");
         int temp = sc.nextInt();
+
         boolean Flag = true;
         while (Flag) {
             switch (temp) {
@@ -34,7 +35,9 @@ public class MethodsOfLinkedList {
                     l1.insertInOrder(o);
                     l1.display();
                 case 4:
-                    l1.deleteElement();
+                System.out.println("Enter elemnet to delete");
+                int d = sc.nextInt();
+                    l1.deleteElement(d);
                     l1.display();
                 case 5:
                     l1.CountNodes();
@@ -106,10 +109,7 @@ class LinkedList {
         return;
     }
 
-    public void deleteElement() {
-        Scanner sc1 = new Scanner(System.in);
-        System.out.println("Enter elemnet to delete");
-        int d = sc1.nextInt();
+    public void deleteElement(int d) {
 
         if (first == null) {
             System.out.println("Under-Flow");
