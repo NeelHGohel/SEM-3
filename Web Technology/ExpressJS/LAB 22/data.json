@@ -1,0 +1,52 @@
+[
+    {
+    "client_id" : 1,
+    "acc_no" : 101,
+    "client_name" : "abc",
+    "amount_acc" : 1000
+    },
+
+    {
+        "client_id" : 2,
+        "acc_no" : 102,
+        "client_name" : "efg",
+        "amount_acc" : 2000
+    },
+    
+    {
+        "client_id" : 3,
+        "acc_no" : 103,
+        "client_name" : "hij",
+        "amount_acc" : 3000
+    },
+    {
+        "client_id" : 4,
+        "acc_no" : 104,
+        "client_name" : "klm",
+        "amount_acc" : 1000
+    },
+    {
+        "client_id" : 5,
+        "acc_no" : 105,
+        "client_name" : "nop",
+        "amount_acc" : 5000
+    },
+    {
+        "client_id" : 6,
+        "acc_no" : 106,
+        "client_name" : "qrs",
+        "amount_acc" : 6000
+    },
+    {
+        "client_id" : 7,
+        "acc_no" : 107,
+        "client_name" : "tuvw",
+        "amount_acc" : 7000
+    },
+    {
+        "client_id" : 8,
+        "acc_no" : 108,
+        "client_name" : "xyz",
+        "amount_acc" : 8000
+    }
+]
