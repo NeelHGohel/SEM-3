@@ -29,15 +29,3 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   // );
   
 
-function Wel(props){
-  const ish1 = props.ish1;
-  
-  return(
-    <>
-      {ish1 && <h1>True</h1>}
-      {!ish1 && <h1>False</h1>}
-    </>
-  )
-}
-
-root.render(<Wel ish1 = "True"/>);

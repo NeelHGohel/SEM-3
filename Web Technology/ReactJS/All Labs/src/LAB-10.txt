@@ -1,0 +1,34 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+// import Welcome from './Welcome';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+function Form() {
+    function handleSubmit() {
+      return(alert("shu kaam karyu"))
+    }
+  
+    return (
+      <button onClick={handleSubmit}>
+        Submit
+      </button>
+    );
+  }
+
+
+root.render(<Form />);
+
+//Conditional 
+// function Wel(props){
+//   const ish1 = props.ish1;
+  
+//   return(
+//     <>
+//       {ish1 && <h1>True</h1>}
+//       {!ish1 && <h1>False</h1>}
+//     </>
+//   )
+// }
+
+// root.render(<Wel ish1 = "True"/>);
