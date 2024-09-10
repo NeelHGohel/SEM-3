@@ -1,0 +1,21 @@
+// Class Componemt
+// class Hello extends React.Component{
+//   render(){
+//     return(<h1>Hello world from class</h1>);
+//   }
+// }
+// root.render(<Hello/>);
+
+//Raw
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <h1>Heelo wooorld frrrom reeeeact</h1>  
+// );
+
+// //function 
+
+// function Hello(){
+//   return(<h1>Hello world from function</h1>);
+// }
+// root.render(<Hello/>);
+
