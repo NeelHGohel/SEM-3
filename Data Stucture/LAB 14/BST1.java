@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class BST1 {
@@ -18,21 +17,34 @@ public class BST1 {
             int x = sc.nextInt();
             switch (x) {
                 case 1:
-                    System.out.println("Enter data");
+                    System.out.println("Enter data to insert");
                     int y = sc.nextInt();
                     T.insert(y);
+                    break;
+                case 2:
+                    System.out.println("Enter data to delete");
+                    int d = sc.nextInt();
+                    T.delete(d);
                     break;
                 case 3:
                     System.out.println("Enter data to search");
                     int s = sc.nextInt();
-                    T.search(s);
+                    boolean found = T.search(s);
+                    if (found) {
+                        System.out.println("Node found.");
+                    } else {
+                        System.out.println("Node not found.");
+                    }
                     break;
                 case 4:
                     flag = false;
                     break;
-
+                default:
+                    System.out.println("Invalid choice, please enter again.");
+                    break;
             }
         }
+        sc.close();
     }
 }
 
@@ -43,6 +55,8 @@ class Node {
 
     public Node(int data) {
         this.data = data;
+        this.left = null;
+        this.right = null;
     }
 }
 
@@ -58,7 +72,7 @@ class BinarySearchTree {
         root = insertData(root, data);
     }
 
-    public Node insertData(Node root, int data) {
+    private Node insertData(Node root, int data) {
         if (root == null) {
             root = new Node(data);
             return root;
@@ -71,21 +85,53 @@ class BinarySearchTree {
         return root;
     }
 
+    // Delete
+    void delete(int data) {
+        root = deleteData(root, data);
+    }
+
+    private Node deleteData(Node root, int data) {
+        if (root == null) {
+            return null;
+        }
+        if (data < root.data) {
+            root.left = deleteData(root.left, data);
+        } else if (data > root.data) {
+            root.right = deleteData(root.right, data);
+        } else {
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+
+            Node minNode = findMin(root.right);
+            root.data = minNode.data;
+            root.right = deleteData(root.right, minNode.data);
+        }
+        return root;
+    }
+
+    private Node findMin(Node root) {
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root;
+    }
+
+    // Search
     boolean search(int data) {
         return searchData(root, data);
     }
 
-    boolean searchData(Node root, int data) {
+    private boolean searchData(Node root, int data) {
         if (root == null) {
             return false;
         } else if (data == root.data) {
-            System.out.println("Seached Node is root Node");
             return true;
         } else if (data > root.data) {
-            System.out.println("Searched Node is at right subtree");
             return searchData(root.right, data);
         } else {
-            System.out.println("Searched Node is at left subtree");
             return searchData(root.left, data);
         }
     }
