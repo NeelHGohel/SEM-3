@@ -6,15 +6,20 @@ import ReactDOM from 'react-dom/client';
 // import Project from './Component/Project';
 // import Service from './Component/Service';
 // import Contact from './Component/Contact';
-//import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Display from './LAB 13/useState';
+import DisplayAll from './LAB 13/FeatchAPI';
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+
 root.render(
-    <table style={{"border" : "2px solid red" , "margin-left" : "50px"}}>
-        <Display/>
-    </table>
-    
+    <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<DisplayAll/>}></Route>
+        </Routes>
+    </BrowserRouter>
 );
 
 
@@ -22,6 +27,15 @@ root.render(
 
 
 
+
+
+// LAB-13
+// root.render(
+//     <table style={{"border" : "2px solid red" , "margin-left" : "50px"}}>
+//         <Display/>
+//     </table>
+    
+// );
 
 
 
